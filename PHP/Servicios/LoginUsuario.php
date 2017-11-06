@@ -4,7 +4,7 @@
  * @Mail  dropimax@gmail.com
  * @Name  Notificacion
  * @Date  06/11/2017
- * Notificacion.php
+ * LoginUsuario.php
  */
 /*
  * OBJETOS DE LA CLASE VALIDADOR
@@ -16,16 +16,11 @@
  */
 //validador
 require_once('Validador.php');
-//Clases import
-require_once('../Modelo/Evento.php');
 //*******************
 //Logica del servicio
-$evento  = new Evento();
-//Consulta Eventos
-$resultado = $evento->fn_consulta_evento_notifica(null,$ajax);
-//Se guarda el resultado
-$ajax->setResultado($resultado); 
+$datos[0]["USUARIO"]    = "";
+$datos[0]["CONTRASENA"] = "";
+$ajax->setResultado($datos);
 //retorno objeto ajax
 $ajax->RetornarJSON();
-//Fin   
 ?>

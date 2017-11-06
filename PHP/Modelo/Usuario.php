@@ -19,7 +19,7 @@ class Usuario {
 	 * @Date 05/11/2017
 	 * Consulta un usuario mediante un usuario y contrasena
 	 */
-	function fn_consulta_usuario ( $bd = null , $ajax = null ,$usuario,$contrasena){
+	function fn_consulta_usuario( $bd = null , $ajax = null ,$usuario,$contrasena){
 		$array = null;
 		
 		if($bd == null){
@@ -33,7 +33,7 @@ class Usuario {
 			$bd->setParametro($contrasena);
 			
 			if($bd->Ejecutar()){
-				$array = $bd->getResutados();
+				$array = $bd->getResutados(true);
 			}
 		}
 		/** En caso de errores */
@@ -44,6 +44,40 @@ class Usuario {
 		$bd->Cerrar();
 		return $array;
 		
+	}
+	
+	/*
+	 * @Autor Hernan Dario Cardenas
+	 * @Mail dropimax@gmail.com
+	 * @Name fn_consulta_usuarios
+	 * @Date 06/11/2017
+	 * Consulta usuarios registrados
+	 */
+	function fn_consulta_usuarios( $bd = null , $ajax = null ){
+	    $array = null;
+	    
+	    if($bd == null){
+	        $bd = new ConexionBD();
+	    }
+	    
+	    if($bd->iniciar()){
+	        /** Sentencia */
+	        $bd->setSentencia('select * from CT_USUARIOS where cod_roll=?');
+	        $bd->setParametro('2');
+	   
+	        
+	        if($bd->Ejecutar()){
+	            $array = $bd->getResutados();
+	        }
+	    }
+	    /** En caso de errores */
+	    if($bd->Errores()){
+	        $bd->printErrores('Usuario::fn_consulta_usuario',$ajax);
+	    }
+	    
+	    $bd->Cerrar();
+	    return $array;
+	    
 	}
 	
 	

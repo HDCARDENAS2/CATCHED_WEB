@@ -36,11 +36,7 @@ class Control {
 				$v_contrasena =  substr(trim($array[1]),4);		
 				$datos        =  $usuario->fn_consulta_usuario(null,$ajax,$v_usuario,$v_contrasena);	
 			}
-			
-			if($datos == null){
-				$ajax->setError("Error de Autentificacion de Usuario.");
-			}
-			
+	
 		} catch (Exception $e) {
 			$ajax->setError($e);
 		}

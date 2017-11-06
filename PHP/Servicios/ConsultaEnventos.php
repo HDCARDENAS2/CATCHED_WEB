@@ -4,7 +4,7 @@
  * @Mail  dropimax@gmail.com
  * @Name  Notificacion
  * @Date  06/11/2017
- * Notificacion.php
+ * ConsultaEnventos.php
  */
 /*
  * OBJETOS DE LA CLASE VALIDADOR
@@ -20,12 +20,12 @@ require_once('Validador.php');
 require_once('../Modelo/Evento.php');
 //*******************
 //Logica del servicio
-$evento  = new Evento();
-//Consulta Eventos
-$resultado = $evento->fn_consulta_evento_notifica(null,$ajax);
+$evento = new Evento();
+//Consulta Usuarios
+$resultado = $evento->fn_consulta_eventos(null,$ajax);
 //Se guarda el resultado
-$ajax->setResultado($resultado); 
+$ajax->setResultado($resultado);
 //retorno objeto ajax
 $ajax->RetornarJSON();
-//Fin   
+//Fin
 ?>
