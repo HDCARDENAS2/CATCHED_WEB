@@ -20,7 +20,7 @@ $datos = $control->fn_validar_usuario($cadena,$ajax);
 if( $datos != null ){
 	//Consulta de eventos
 	$resultado = $evento->fn_consulta_evento(null,$ajax);
-	$ajax->setResultado(json_encode($resultado)); 
+	$ajax->setResultado($resultado); 
 }
 	//retorno objeto ajax
 $ajax->RetornarJSON();
