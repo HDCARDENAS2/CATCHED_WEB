@@ -27,8 +27,8 @@ public function __construct(){
  * @access public
  */
 
-function setError($dato){
-	$this->array_errors[ count( $this->array_errors)] = $dato ;
+function setError($msn){
+    $this->array_errors[ count( $this->array_errors)]['msn'] = $msn ;
 
 }
 
@@ -41,13 +41,13 @@ function setError($dato){
  * @access public
  */
 
-function setMensaje($dato){
-	$this->array_mensajes[count( $this->array_mensajes)] = $dato ;
+function setMensaje($msn){
+	$this->array_mensajes[count( $this->array_mensajes)]['msn']= $msn ;
 }
 
 
 /**
- * Esta funcion adiciona un nuevo dato al json
+ * Esta funcion adiciona un nuevo msn al json
  *
  * @author Hernan Dario Cardenas
  *         @email dropimax@gmail.com
@@ -55,14 +55,14 @@ function setMensaje($dato){
  * @access public
  */
 
-function setDato($llave,$valor){
+function setmsn($llave,$valor){
 	$this->js_object_encode[$llave] = $valor;
 }
 
 
 
 /**
- * Esta funcion adiciona un nuevo dato al json
+ * Esta funcion adiciona un nuevo msn al json
  *
  * @author Hernan Dario Cardenas
  *         @email dropimax@gmail.com
@@ -99,7 +99,6 @@ function RetornarJSON($UTF8_ENCODE = true){
 		:
 		$this->array_mensajes;
 	}
-
 	echo json_encode($this->js_object_encode);
 }
 
@@ -114,7 +113,7 @@ function RetornarJSON($UTF8_ENCODE = true){
 
 function ConvertArrayUTF8($arraycv){
 	for ($i = 0; $i < count($arraycv); $i++) {
-		$arraycv[$i]=utf8_encode($arraycv[$i]);
+	    $arraycv[$i]['msn']=utf8_encode($arraycv[$i]['msn']);
 	}
 	return $arraycv;
 }

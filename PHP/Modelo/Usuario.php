@@ -28,12 +28,12 @@ class Usuario {
 		
 		if($bd->iniciar()){
 			/** Sentencia */
-			$bd->setSentencia('select * from CT_USUARIOS where usuario=? and contrasena=? ');
+			$bd->setSentencia('select COD_USUARIO, NOMBRES, FECHA_CREACION, COD_ROLL, IND_ESTADO  from CT_USUARIO where usuario=? and contrasena=? ');
 			$bd->setParametro($usuario);
 			$bd->setParametro($contrasena);
 			
 			if($bd->Ejecutar()){
-				$array = $bd->getResutados(true);
+				$array = $bd->getResutados(false);
 			}
 		}
 		/** En caso de errores */
@@ -62,10 +62,9 @@ class Usuario {
 	    
 	    if($bd->iniciar()){
 	        /** Sentencia */
-	        $bd->setSentencia('select * from CT_USUARIOS where cod_roll=?');
+	        $bd->setSentencia('select COD_USUARIO, NOMBRES, FECHA_CREACION, COD_ROLL, IND_ESTADO from CT_USUARIO where cod_roll=?');
 	        $bd->setParametro('2');
-	   
-	        
+
 	        if($bd->Ejecutar()){
 	            $array = $bd->getResutados();
 	        }

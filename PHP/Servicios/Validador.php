@@ -20,7 +20,7 @@ if( $datos == null ){
    $ajax->RetornarJSON();
    die();
 }else if( $datos != null ){   
-    if($datos[0]["IND_ESTADO"] == "0"){
+    if($datos["IND_ESTADO"] == "0"){
         $ajax->setError("El usuario esta inactivo.");
         $ajax->RetornarJSON();
         die();

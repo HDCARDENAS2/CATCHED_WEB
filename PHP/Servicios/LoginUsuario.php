@@ -18,8 +18,6 @@
 require_once('Validador.php');
 //*******************
 //Logica del servicio
-$datos[0]["USUARIO"]    = "";
-$datos[0]["CONTRASENA"] = "";
 $ajax->setResultado($datos);
 //retorno objeto ajax
 $ajax->RetornarJSON();

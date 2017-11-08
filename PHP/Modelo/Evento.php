@@ -27,7 +27,7 @@ class Evento {
 		
 		if($bd->iniciar()){
 			/** Sentencia */
-			$bd->setSentencia('select * from CT_EVENTO ORDER BY FECHA DESC');
+			$bd->setSentencia('select * from CT_EVENTO ORDER BY FECHA_CREACION DESC');
 			if($bd->Ejecutar()){
 				$array = $bd->getResutados();
 			}
@@ -57,7 +57,7 @@ class Evento {
 	    
 	    if($bd->iniciar()){
 	        /** Sentencia */
-	        $bd->setSentencia('select * from CT_EVENTO ORDER BY FECHA DESC');
+	        $bd->setSentencia('select * from CT_EVENTO ORDER BY FECHA_CREACION DESC');
 	        if($bd->Ejecutar()){
 	            $array = $bd->getResutados();
 	        }
