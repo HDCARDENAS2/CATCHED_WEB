@@ -17,8 +17,24 @@
 //validador
 require_once('Validador.php');
 //*******************
+require_once('../Modelo/Evento.php');
 //Logica del servicio
+
+$evento = new Evento();
+
+$resultado = $evento->fn_consulta_ultimo_evento_notifica(null,$ajax);
+
+$fecha;
+
+if($resultado != null){
+    $fecha = $resultado['FECHA_CREACION'];
+}else{
+    $date = new DateTime();
+    $fecha = $date->format('Y-m-d H:i:s');
+}
+$ajax->setDato('fecha',$fecha);
 $ajax->setResultado($datos);
+
 //retorno objeto ajax
 $ajax->RetornarJSON();
 ?>

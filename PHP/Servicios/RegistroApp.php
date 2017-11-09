@@ -14,7 +14,7 @@ $control = new Control();
 $ajax    = new CoreAjax();
 $general = new General();
 /*Peticion*/
-$forma   = $_GET;
+$forma   = $_POST;
 /*catos*/
 $cadena  = $control->fn_get_dato($forma, 'key');
 //*******************
@@ -24,7 +24,7 @@ if($resultado['VALOR_PARAMETRO'] == $cadena){
     $resultado2 = $general->fn_consulta_parametro(null,$ajax,2);
     $ajax->setResultado($resultado2);
 }else{
-    $ajax->setError("Password Incorrecto.");
+    $ajax->setError("Password Maestro Incorrecto.");
 }
 //retorno objeto ajax
 $ajax->RetornarJSON();

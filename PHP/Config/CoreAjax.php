@@ -75,6 +75,21 @@ function setResultado($valor){
 }
 
 
+
+/**
+ * Esta funcion adiciona un nuevo msn al json
+ *
+ * @author Hernan Dario Cardenas
+ *         @email dropimax@gmail.com
+ *         @date 05/11/2017
+ * @access public
+ */
+
+function setDato($llave,$valor){
+    $this->js_object_encode[$llave] = $valor;
+}
+
+
 /**
  * Esta funcion valida si hay errores de mensajes en la forma
  *

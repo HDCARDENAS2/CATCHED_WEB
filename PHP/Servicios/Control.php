@@ -33,8 +33,9 @@ class Control {
 			
 				$str          =  substr(trim($array[0]),5);
 			    $v_usuario    =  base64_decode($str);
-				$v_contrasena =  substr(trim($array[1]),4);		
+				$v_contrasena =  substr(trim($array[1]),4);			
 				$datos        =  $usuario->fn_consulta_usuario(null,$ajax,$v_usuario,$v_contrasena);	
+			
 			}
 	
 		} catch (Exception $e) {

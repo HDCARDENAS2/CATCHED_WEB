@@ -21,8 +21,12 @@ require_once('../Modelo/Evento.php');
 //*******************
 //Logica del servicio
 $evento  = new Evento();
+$fecha   =  $control->fn_get_dato($forma, 'fecha');
+
+
+
 //Consulta Eventos
-$resultado = $evento->fn_consulta_evento_notifica(null,$ajax);
+$resultado = $evento->fn_consulta_evento_notifica(null,$ajax,$fecha);
 //Se guarda el resultado
 $ajax->setResultado($resultado); 
 //retorno objeto ajax
