@@ -7,8 +7,8 @@
  * Notificacion.php
  */
 require_once('Validador.php');
-require_once('..\Modelo\General.php');
-require_once('..\Modelo\Usuario.php');
+require_once('../Modelo/General.php');
+require_once('../Modelo/Usuario.php');
 
 $general = new General();
 $obj_usuario = new Usuario();

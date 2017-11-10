@@ -28,7 +28,7 @@ class Evento {
 		if($bd->iniciar()){
 
 			/** Sentencia */
-		    $bd->setSentencia("select COD_EVENTO, RUTA, NOMBRE_IMG, FECHA_CREACION from CT_EVENTO WHERE FECHA_CREACION > ".$fecha."  ORDER BY COD_EVENTO DESC LIMIT 1 ");
+		    $bd->setSentencia("select COD_EVENTO, RUTA, NOMBRE_IMG, FECHA_CREACION from ct_evento WHERE FECHA_CREACION > ".$fecha."  ORDER BY COD_EVENTO DESC LIMIT 1 ");
 			if($bd->Ejecutar()){
 			    $array = $bd->getResutados(false);
 			}
@@ -58,7 +58,7 @@ class Evento {
 	    
 	    if($bd->iniciar()){
 	        /** Sentencia */
-	        $bd->setSentencia('select FECHA_CREACION from CT_EVENTO  ORDER BY COD_EVENTO DESC LIMIT 1 ');	        
+	        $bd->setSentencia('select FECHA_CREACION from ct_evento  ORDER BY COD_EVENTO DESC LIMIT 1 ');	        
 	        if($bd->Ejecutar()){
 	            $array = $bd->getResutados(false);
 	        }
@@ -89,7 +89,7 @@ class Evento {
 	    
 	    if($bd->iniciar()){
 	        /** Sentencia */
-	        $bd->setSentencia('select * from CT_EVENTO ORDER BY FECHA_CREACION DESC');
+	        $bd->setSentencia('select * from ct_evento ORDER BY FECHA_CREACION DESC');
 	        if($bd->Ejecutar()){
 	            $array = $bd->getResutados();
 	        }

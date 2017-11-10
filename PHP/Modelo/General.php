@@ -28,7 +28,7 @@ class General {
         
         if($bd->iniciar()){
             /** Sentencia */
-            $bd->setSentencia('select * from CT_PARAMETRO where COD_PARAMETRO=?');
+            $bd->setSentencia('select * from ct_parametro where COD_PARAMETRO=?');
             $bd->setParametro($cod_parametro);
             if($bd->Ejecutar()){
                 $array = $bd->getResutados(false);

@@ -6,7 +6,7 @@
  * @Date  05/11/2017
  */
 require_once('Control.php');
-require_once('..\Config\CoreAjax.php');
+require_once('../Config/CoreAjax.php');
 $control = new Control();
 $ajax    = new CoreAjax();
 /*Peticion*/

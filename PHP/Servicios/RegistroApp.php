@@ -7,8 +7,8 @@
  * Notificacion.php
  */
 require_once('Control.php');
-require_once('..\Config\CoreAjax.php');
-require_once('..\Modelo\General.php');
+require_once('../Config/CoreAjax.php');
+require_once('../Modelo/General.php');
 
 $control = new Control();
 $ajax    = new CoreAjax();

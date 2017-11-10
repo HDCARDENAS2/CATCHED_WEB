@@ -28,7 +28,7 @@ class Usuario {
 		
 		if($bd->iniciar()){
 			/** Sentencia */
-			$bd->setSentencia('select COD_USUARIO, NOMBRES, USUARIO, FECHA_CREACION, COD_ROLL, IND_ESTADO  from CT_USUARIO where usuario=? and contrasena=? ');
+			$bd->setSentencia('select COD_USUARIO, NOMBRES, USUARIO, FECHA_CREACION, COD_ROLL, IND_ESTADO  from ct_usuario where usuario=? and contrasena=? ');
 			$bd->setParametro($usuario);
 			$bd->setParametro($contrasena);
 			
@@ -62,7 +62,7 @@ class Usuario {
 	    
 	    if($bd->iniciar()){
 	        /** Sentencia */
-	        $bd->setSentencia('select COD_USUARIO, NOMBRES, USUARIO, FECHA_CREACION, COD_ROLL, IND_ESTADO from CT_USUARIO where cod_roll=?');
+	        $bd->setSentencia('select COD_USUARIO, NOMBRES, USUARIO, FECHA_CREACION, COD_ROLL, IND_ESTADO from ct_usuario where cod_roll=?');
 	        $bd->setParametro('2');
 
 	        if($bd->Ejecutar()){
@@ -96,7 +96,7 @@ class Usuario {
 	    
 	    if($bd->iniciar()){
 	        /** Sentencia */
-	        $bd->setSentencia('select COD_USUARIO, NOMBRES, USUARIO,  FECHA_CREACION, COD_ROLL, IND_ESTADO  from CT_USUARIO where usuario=? ');
+	        $bd->setSentencia('select COD_USUARIO, NOMBRES, USUARIO,  FECHA_CREACION, COD_ROLL, IND_ESTADO  from ct_usuario where usuario=? ');
 	        $bd->setParametro($usuario);
 	        if($bd->Ejecutar()){
 	            $array = $bd->getResutados(false);
@@ -137,7 +137,7 @@ class Usuario {
 	    
 	    if($bd->iniciar()){
 	        /** Sentecia */
-	        $bd->setSentencia('INSERT INTO CT_USUARIO (USUARIO,NOMBRES,CONTRASENA) VALUES(?,?,?);');
+	        $bd->setSentencia('INSERT INTO ct_usuario (USUARIO,NOMBRES,CONTRASENA) VALUES(?,?,?);');
 	        /** Parametros */
 	        $bd->setParametro($usuario);
 	        $bd->setParametro($nombre);
