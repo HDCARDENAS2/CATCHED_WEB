@@ -32,7 +32,7 @@ if($resultado['VALOR_PARAMETRO'] == $cadena){
     if($password == $password_c){
         
         if($obj_usuario->fn_consulta_usuario_id(null,$ajax,$usuario) == null){
-            if($obj_usuario->fn_modificar_usuario($usuario, $nombre, $password,$datos['COD_USUARIO'],$ajax,null)){
+            if($obj_usuario->fn_insert_usuario($usuario, $nombre, $password,$ajax,null)){
                 $ajax->setMensaje("El usuario fue modificado con exito.");
                 $ajax->setResultado("Exito");
             }
