@@ -104,6 +104,36 @@ class Evento {
 	}
 	
 	
+	/*
+	 * @Autor Hernan Dario Cardenas
+	 * @Mail  dropimax@gmail.com
+	 * @Name  fn_consulta_eventos
+	 * @Date  05/11/2017
+	 * Consulta los eventos
+	 */
+	function fn_consulta_imagen($bd = null, $ajax = null, $cod_evento){
+	    $array = null;
+	    
+	    if($bd == null){
+	        $bd = new ConexionBD();
+	    }
+	    
+	    if($bd->iniciar()){
+	        /** Sentencia */
+	        $bd->setSentencia('select * from ct_evento where cod_evento = ?');
+	        $bd->setParametro($cod_evento);
+	        if($bd->Ejecutar()){
+	            $array = $bd->getResutados(false);
+	        }
+	    }
+	    /** En caso de errores */
+	    if($bd->Errores()){
+	        $bd->printErrores('Evento::fn_consulta_eventos',$ajax);
+	    }
+	    
+	    $bd->Cerrar();
+	    return $array;
+	}
 	
 		
 }

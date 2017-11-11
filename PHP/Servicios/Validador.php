@@ -10,7 +10,7 @@ require_once('../Config/CoreAjax.php');
 $control = new Control();
 $ajax    = new CoreAjax();
 /*Peticion*/
-$forma   = $_POST;
+$forma   = $_GET;
 /*catos*/
 $cadena  = $control->fn_get_dato($forma, 'key');
 //Validacion de usuario6
